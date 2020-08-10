@@ -1,10 +1,16 @@
-let money = 1;
-let income = 2;
-let addExpenses = 3;
-let deposit = 4;
-let mission = 5;
-let period = 6;
+let money = 900000; //доход за месяц
+let income = '500000'; // дополнительный доход
+let addExpenses = ('Бензин, интернет, Ком. услуги'); // доп. расходы бензин, интернет, ком. услуги
+let deposit = true; //булевое значение
+let mission = 5000000; //накопление суммы
+let period = 6; //период
+let budgetDay = money / 30; //доход за день
 
-alert(money);
-console.log(addExpenses);
-console.log('hello world');
+console.log(money);
+console.log(income);
+console.log(deposit);
+console.log(addExpenses.length);
+console.log('Период равен', period, 'месяцев');
+console.log('Цель заработать', mission, 'рублей');
+console.log((addExpenses.toLowerCase()).split(', '));
+console.log (budgetDay);

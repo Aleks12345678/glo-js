@@ -23,13 +23,14 @@ console.log(amount1);
 console.log(amount2);
 let budgetMount = money - ((amount1)+(amount2));
 let budgetDay = budgetMount / 30; //доход за день
-// console.log(addExpenses.length);
-// console.log('Период равен', period, 'месяцев');
-// console.log('Цель заработать', mission, 'рублей');
+ //console.log(addExpenses.length);
+ console.log('Период равен', period, 'месяцев');
+ console.log('Цель заработать', mission, 'рублей');
 // console.log(Number((addExpenses.toLowerCase()).split(', ')));
-console.log(Number(budgetMount));
-console.log (Math.ceil(mission / budgetMount));
-console.log (Math.floor(budgetDay));
+console.log('Бюджет на месяц', (Number(budgetMount)), 'рублей');
+//console.log('Бюджет на день', (Math.floor(budgetDay)), 'рублей');
+console.log ('Цель будет достигнута за', (Math.ceil(mission / budgetMount)), 'месяцев');
+
 if (budgetDay >= 1200) {
     console.log('У вас высокий уровень дохода');
 } else if (600 <= budgetDay >= 1200) {
@@ -39,6 +40,7 @@ if (budgetDay >= 1200) {
 } else if (budgetDay < 0) {
     console.log('Что то пошло не так');
 }
+
 
 
 

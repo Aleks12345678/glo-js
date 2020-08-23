@@ -69,7 +69,7 @@ function getAccumulatedMonth() {
 
                         //за какой период достигнута цель
 function getTargetMonth() {
-    return mission / accumulatedMonth;
+    return mission / accumulatedMonth; 
 
 }
 

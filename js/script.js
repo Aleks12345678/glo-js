@@ -5,9 +5,7 @@ let money = +prompt('Ваш месячный доход?', 15000),
     addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую', 'коммунальные, бензин, интернет'), // доп. расходы бензин, интернет, ком. услуги
     deposit = confirm('Есть ли у вас депозит в банке?'), //булевое значение
     expenses1 = prompt('Введите обязательную статью расходов?', 'бензин'),
-    amount1 = +prompt('Во сколько это обойдется?', 1000),
     expenses2 = prompt('Введите обязательную статью расходов?', 'интернет'),
-    amount2 = +prompt('Во сколько это обойдется?', 3000),
     mission = 50000, //накопление суммы
     period = 6; //период
 
@@ -20,17 +18,22 @@ let money = +prompt('Ваш месячный доход?', 15000),
     showTypeOf();
 
     //массив addExpenses
-    console.log(addExpenses.split());
+    console.log(addExpenses.split(','));
 
 
 
 
                         // сумма обязательных платежей
 function getExpensesMonth() {
-    return amount1 + amount2;
+     let amount1 = +prompt('Во сколько это обойдется?', 1000);
+     let amount2 = +prompt('Во сколько это обойдется?', 3000);
+    let result = amount1 + amount2;
+    return result;
+    
 }
     console.log('сумма обязательных расходов: ', getExpensesMonth()); 
 
+    
                         //считаем накопления за месяц
 function getAccumulatedMonth() {
     return money - getExpensesMonth();

@@ -40,29 +40,36 @@ let appData = {
     for (let key in appData.expenses){
         appData.expensesMonth += appData.expenses[key];
     }
-    console.log('Расходы за месяц: ', appData.expensesMonth, 'рублей'); 
+    console.log('Расходы за месяц: ', appData.expensesMonth); 
+
 
                         //считаем накопления за месяц
     appData.getBudget = () => {
         return money - appData.expensesMonth;
     };
-
     //присвоение результата вызова функции getAccumulatedMonth
     appData.budgetMonth = appData.getBudget; 
-   
+    //console.log('Накопления за месяц: ', appData.budgetMonth()); 
+
     //доход за день
     appData.budgetDay = appData.budgetMonth() / 30;
 
-    //за какой период достигнута цель
-    appData.getTargetMonth  = () => {
-        return appData.mission / appData.budgetMonth(); 
-    }
+    //console.log('Доход за день составляет:', Math.floor(appData.budgetDay), 'рублей');
+
+                        //за какой период достигнута цель
+appData.getTargetMonth  = () => {
+    return appData.mission / appData.budgetMonth(); 
+}
+
     if (appData.getTargetMonth() >= 0) {
         console.log('Цель будет достигнута за :', Math.ceil(appData.getTargetMonth()), 'месяца(ев)');   
     }else {
     console.log('Цель не будет достигнута');
     }
-    // уровень дохода
+     
+
+
+
     appData.getStatusIncome = () => {
         if (appData.budgetDay >= 1200) {
             console.log('У вас высокий уровень дохода');
@@ -76,8 +83,3 @@ let appData = {
     }
     appData.getStatusIncome();
 
-    for (let key in appData){
-        console.log('Наша программа включает в себя данные: свойство: ' + key + ' значение: '+ appData[key]);
-        
-    }
-    
